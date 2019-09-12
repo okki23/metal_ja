@@ -6,8 +6,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title><?php echo $judul; ?></title>
     <!-- Favicon-->
-    <link rel="icon" href="<?php echo base_url('assets/images/rp_logo.png'); ?>" type="image/x-icon">
-
+     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
@@ -307,7 +306,7 @@
             <!-- Footer -->
             <div class="legal">
                 <div class="copyright">
-                    &copy; 2018 <a href="javascript:void(0);"> Ranty Pesta </a>
+                    &copy; 2019 <a href="javascript:void(0);"> Metal Jaya Abadi </a>
                 </div>
             </div>
             <!-- #Footer -->
@@ -320,7 +319,7 @@
             
             
                     <div class="demo-settings">
-                        <p> Hai <?php echo $this->session->userdata('username') . " ! <br> Anda masuk sebagai " .level_help($this->session->userdata('session')); ?> </p>
+                        <p> Hai <?php echo $this->session->userdata('username') . " ! <br> "; ?> </p>
                         <ul class="demo-choose-skin">
                        
                          <a href="<?php echo base_url('login/logout'); ?>">
