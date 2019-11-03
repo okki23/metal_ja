@@ -14,15 +14,9 @@ class Front extends Parent_Controller {
 		$this->load->library('MyPHPMailer'); // load library
  	}
 	public function index(){
-		$data['judul'] = $this->data['judul']; 
-		$data['client'] = $this->db->get('m_client')->row();
-		$data['about'] = $this->db->get('m_about')->row();
-		$data['maps'] = $this->db->get('m_googlemaps')->row();
-    $data['price_package'] = $this->db->get('m_pricelist_package')->result();
-    $data['cat_foto'] = $this->db->get('m_cat_foto')->result();
-    $data['list_foto'] = $this->db->get('m_foto')->result();
-    $data['slideshow'] = $this->db->get('m_slideshow')->result();
-		$this->load->view('front/front_view',$data);
+        $data['judul'] = $this->data['judul']; 
+		$data['konten'] = 'front/front_view'; 
+		$this->load->view('template_front',$data);	
 	}
 
   public function get_detail_pricelist(){
