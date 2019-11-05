@@ -1,22 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-/*
-author     : Karlina
-email      : karlinamaksum19@gmail.com
-copyright  : 2018 
-deskripsi  : Class slideshow berisi rincian method atau fungsi logic yang digunakan untuk melakukan olah data master slideshow, dimana method yang terdaftar mengadopsi dari Parent Controller
-*/
 
 class Slideshow extends Parent_Controller {
-
-  /*variabel global yang digunakan untuk instance di masing masing method agar dapat
-  digunakan sewaktu waktu tanpa harus menulis ulang
-  */
+ 
   var $nama_tabel = 'm_slideshow';
   var $daftar_field = array('id','foto_url','caption_a','caption_b','seq_no');
   var $primary_key = 'id';
- 
-  //method construct dijalankan pertama kali dan terus berjalan selama class digunakan
+  
  	public function __construct(){
  		parent::__construct();
  		$this->load->model('m_slideshow'); 

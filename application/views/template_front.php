@@ -84,7 +84,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="<?php echo base_url(); ?>assets_front/images/logomja.png" alt="image"></a>
+                    <a class="navbar-brand" href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>assets_front/images/logomja.png" alt="image"></a>
                     <p class="lead">PT. Metal Jaya Abadi</p>
                 </div>
               

@@ -11,6 +11,8 @@ class Front extends Parent_Controller {
 	public function index(){
         $data['judul'] = $this->data['judul']; 
 		$data['konten'] = 'front/front_view'; 
+		$data['slide'] = $this->db->query('select * from m_slideshow order by seq_no ASC ')->result();
+		$data['about'] = $this->db->get('m_about')->row();
 		$this->load->view('template_front',$data);	
 	}
  
