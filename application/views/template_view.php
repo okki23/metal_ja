@@ -177,9 +177,15 @@
                         </a>
                     </li>  
                     <li>
-                        <a href="<?php echo base_url('cat_foto'); ?>">
+                        <a href="<?php echo base_url('cat_produk'); ?>">
                            <i class="material-icons">dns</i>
-                            <span>Kategori Foto</span>
+                            <span>Kategori Produk</span>
+                        </a>
+                    </li> 
+                    <li>
+                        <a href="<?php echo base_url('produk_backend'); ?>">
+                           <i class="material-icons">dns</i>
+                            <span>Produk</span>
                         </a>
                     </li> 
                     <li>
@@ -192,6 +198,18 @@
                         <a href="<?php echo base_url('slideshow'); ?>">
                            <i class="material-icons">dns</i>
                             <span>Slideshow</span>
+                        </a>
+                    </li> 
+                    <li>
+                        <a href="<?php echo base_url('visi_misi'); ?>">
+                           <i class="material-icons">dns</i>
+                            <span>Visi Misi</span>
+                        </a>
+                    </li> 
+                    <li>
+                        <a href="<?php echo base_url('struktur'); ?>">
+                           <i class="material-icons">dns</i>
+                            <span>Struktur</span>
                         </a>
                     </li> 
                     <li>

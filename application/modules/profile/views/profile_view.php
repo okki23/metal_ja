@@ -27,51 +27,49 @@
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <ul class="features-left">
-                        <li class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
-                            <i class="flaticon-line-graph"></i>
-                            <div class="fl-inner">
-                                <h4 style="text-align: center;">Menjadi Perusahaan Penyedia Jasa Yang Mampu bersaing di Pasaran </h4>
-                            </div>
-                        </li>
-                        <li class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
-                            <i class="flaticon-line-graph"></i>
-                            <div class="fl-inner">
-                                <h4 style="text-align: center;">Mempertahankan Kualitas Menjadi Pokok Perhatian Pertama</h4>
-                            </div>
-                        </li>
-                        <li class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
-                            <i class="flaticon-line-graph"></i>
-                            <div class="fl-inner">
-                                <h4 style="text-align: center;">Tetap Eksis di Dunia Pengolahan Plat Besi</h4>
-                            </div>
-                        </li>
+                        <?php 
+                        foreach($listing as $key=>$val){
+                            if ($val->id == 4)
+                            {
+                                break;
+                            }else{
+                                echo '   
+                                <li class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
+                                <i class="flaticon-line-graph"></i>
+                                <div class="fl-inner">
+                                    <h4 style="text-align: center;"> '.$val->listing.' </h4>
+                                </div>
+                                </li>';
+
+                            }
+                          
+                        }
+                        ?> 
                        
                     </ul>
                 </div>
-             
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <ul class="features-right">
-                        <li class="wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s">
-                            <i class="flaticon-line-graph"></i>
-                            <div class="fr-inner">
-                                <h4 style="text-align: center;">Meningkatkan Layanan Terhadap Konsumen </h4>
-                            </div>
-                        </li>
-                        <li class="wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s">
-                            <i class="flaticon-line-graph"></i>
-                            <div class="fr-inner">
-                                <h4 style="text-align: center;">Mengejar Target Produksi Agar Konsumen Puas dan Percaya </h4>
-                            </div>
-                        </li>
-                        <li class="wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.4s">
-                            <i class="flaticon-line-graph"></i>
-                            <div class="fr-inner">
-                                <h4 style="text-align: center;">Fokus dan Tetap Mengikuti Perkembangan Teknologi</h4>
-                            </div>
-                        </li>
+                    <ul class="features-left">
+                        <?php 
+                           foreach($listing as $key=>$val){
+                            if($val->id < 4)
+                                continue;
+                                echo '   
+                                <li class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
+                                <i class="flaticon-line-graph"></i>
+                                <div class="fl-inner">
+                                    <h4 style="text-align: center;"> '.$val->listing.' </h4>
+                                </div>
+                                </li>';
+
                          
+
+                        }
+                        ?> 
+                       
                     </ul>
-                </div><!-- end col -->
+                </div>
+              
             </div><!-- end row -->
 
 
@@ -81,8 +79,11 @@
             </div><!-- end title -->
 
             <div class="row">
-                
-             <img src="images/struktur.png"> </img>
+                <?php
+                echo '<img src="file_manager_dir/'.$struktur->foto_url.' "> </img>';
+                  
+                ?>
+              
 
             </div><!-- end row -->
 

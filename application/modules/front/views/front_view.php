@@ -35,11 +35,11 @@
                 </div><!-- end col -->
 				
                 <div class="col-md-6">
+				
                     <div class="message-box">
-					<?php
-					echo $about->deskripsi;
+					<?php 
+						echo $about->deskripsi;
 					?>
-                    
                     </div><!-- end messagebox -->
                 </div><!-- end col -->
             </div><!-- end row -->
