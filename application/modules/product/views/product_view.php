@@ -49,7 +49,7 @@
                  
                 echo '<div class="post-media pitem item-w1 item-h1 '.strtolower(str_replace(" ","_",$vals->kategori)).' ">  
                         <a href="file_manager_dir/'.$vals->foto.'" data-rel="prettyPhoto[gal]">
-                        <img src="file_manager_dir/'.$vals->foto.'" alt="" class="img-responsive">
+                        <img src="file_manager_dir/'.$vals->foto.'" alt="" class="img-responsive" style="width:250px; height:250px;">
                         </a>
                     </div>';
             }

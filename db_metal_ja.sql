@@ -11,7 +11,7 @@
  Target Server Version : 100316
  File Encoding         : 65001
 
- Date: 12/09/2019 11:10:54
+ Date: 16/11/2019 07:59:49
 */
 
 SET NAMES utf8mb4;
@@ -34,7 +34,7 @@ CREATE TABLE `m_about`  (
 -- ----------------------------
 -- Records of m_about
 -- ----------------------------
-INSERT INTO `m_about` VALUES (14, '<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.</p>\n<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>\n</body>\n</html>', 'admin', '2018-08-03 11:37:04', NULL, NULL);
+INSERT INTO `m_about` VALUES (14, '<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<div class=\"col-md-6\">\n<div class=\"message-box\">\n<h4>Sejarah Perusahaan</h4>\n<h2>PT. Metal Jaya Abadi</h2>\n<p class=\"lead\">Kami adalah perusahaan yang bergerak dibidang Sheet Metal Working, berpengalaman lebih dari 10 tahun. Pekerjaan Kami meliputi pekerjaan tekuk plat, potong plat, roll plat, fabrikasi dsb. Kami mengerjakan berbagai macam jenis plat, plat besi, plat Steinless, plat aluminium, plat tembaga, plat galvanis, plat bordes, dll.</p>\n<p class=\"lead\">Kami memiliki tenaga-tenaga terampil dan terbaik dalam pengoperasian mesin, Kami selalu memberikan pelatihan bagi karyawan kami untuk pengoprasian setiap mesin yang kami miliki. Karyawan kami juga mampu menganalisa gambar yang di berikan oleh konsumen sehingga memberikan hasil pekerjaan yang terbaik untuk kepuasan konsumen.</p>\n<p class=\"lead\">PT Metal Jaya Abadi perusahaan jasa didirikan pada tahun 2005, sejalan dengan visi dan misi dalam pendiriannya. PT Metal Jaya Abadi senantiasa meningkatkan standar kualitas produk, reputasi kepada pelanggan dan pertumbuhan perusahaan itu sendiri. Juga, 10 tahun pengalaman telah membawa serta kemampuan untuk memproses pemahaman mendalam dalam karateristik operasi bisnis dibidang shering, bending, roll dan alser cutting. Oleh karena itu, PT Metal Jaya Abadi mampu memberikan layanan kualitas terbaik kepada pelanggan dan juga sebagai kekuatan untuk bersaing dengan orang lain.</p>\n</div>\n</div>\n</body>\n</html>', 'admin', '2018-08-03 11:37:04', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for m_akun_superadmin
@@ -115,6 +115,26 @@ CREATE TABLE `m_cat_pricelist`  (
 -- ----------------------------
 INSERT INTO `m_cat_pricelist` VALUES (22, 'Tempat Saji', NULL, NULL, 'admin', '2018-09-09 11:30:05');
 INSERT INTO `m_cat_pricelist` VALUES (24, 'Meja', 'admin', '2018-10-16 00:52:15', NULL, NULL);
+
+-- ----------------------------
+-- Table structure for m_cat_produk
+-- ----------------------------
+DROP TABLE IF EXISTS `m_cat_produk`;
+CREATE TABLE `m_cat_produk`  (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `deskripsi` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL,
+  `user_insert` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `date_insert` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `user_update` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `date_update` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 25 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of m_cat_produk
+-- ----------------------------
+INSERT INTO `m_cat_produk` VALUES (22, 'Project', 'admin', '2018-10-16 08:56:56', 'admin', '2018-09-09 11:30:05');
+INSERT INTO `m_cat_produk` VALUES (23, 'Kenangan', 'admin', '2018-10-16 08:56:56', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for m_client
@@ -242,6 +262,23 @@ INSERT INTO `m_pricelist_package` VALUES (7, 'McD', 'picture-1487853821.jpg');
 INSERT INTO `m_pricelist_package` VALUES (8, 'Hokben', 'Harga Menu Gokana Ramen & Teppan 1.jpg');
 
 -- ----------------------------
+-- Table structure for m_produk
+-- ----------------------------
+DROP TABLE IF EXISTS `m_produk`;
+CREATE TABLE `m_produk`  (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `id_kategori` int(10) NULL DEFAULT NULL,
+  `caption` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `foto` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of m_produk
+-- ----------------------------
+INSERT INTO `m_produk` VALUES (2, 23, 'ererekkssssss', '4.jpg');
+
+-- ----------------------------
 -- Table structure for m_slideshow
 -- ----------------------------
 DROP TABLE IF EXISTS `m_slideshow`;
@@ -252,14 +289,15 @@ CREATE TABLE `m_slideshow`  (
   `caption_b` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL,
   `seq_no` varchar(25) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 23 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of m_slideshow
 -- ----------------------------
-INSERT INTO `m_slideshow` VALUES (18, 'image_8.jpeg', 'fg', 'df', '1');
-INSERT INTO `m_slideshow` VALUES (19, 'image_7.jpeg', 'as', 'ddf', '2');
-INSERT INTO `m_slideshow` VALUES (22, '4.jpg', 'nice car', 'oke', '3');
+INSERT INTO `m_slideshow` VALUES (18, 'workshop.png', 'fg', 'df', '1');
+INSERT INTO `m_slideshow` VALUES (19, 'shearingbg.jpg', 'as', 'ddf', '2');
+INSERT INTO `m_slideshow` VALUES (22, 'bendingbg.jpg', 'nice car', 'oke', '3');
+INSERT INTO `m_slideshow` VALUES (23, '242ecaaf429d4e74cfdeda73bcbe2230.jpg', 'Makan Nasi', 'Pake tempe', '5');
 
 -- ----------------------------
 -- Table structure for m_sosmed
@@ -281,6 +319,21 @@ CREATE TABLE `m_sosmed`  (
 -- ----------------------------
 INSERT INTO `m_sosmed` VALUES (14, 'BB201', '2', 'admin', '2018-08-03 11:37:04', NULL, NULL);
 INSERT INTO `m_sosmed` VALUES (15, 'B777', '2', 'admin', '2018-08-09 06:53:17', NULL, NULL);
+
+-- ----------------------------
+-- Table structure for m_struktur
+-- ----------------------------
+DROP TABLE IF EXISTS `m_struktur`;
+CREATE TABLE `m_struktur`  (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `foto_url` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of m_struktur
+-- ----------------------------
+INSERT INTO `m_struktur` VALUES (1, 'struktur.png');
 
 -- ----------------------------
 -- Table structure for m_unit
@@ -328,5 +381,29 @@ CREATE TABLE `m_user`  (
 -- ----------------------------
 INSERT INTO `m_user` VALUES (1, 'admin', 'YQ==', NULL, NULL, NULL, NULL);
 INSERT INTO `m_user` VALUES (3, 'ghjyfrhthtr', 'Yg==', 'admin', '2018-09-09 15:12:55', NULL, NULL);
+
+-- ----------------------------
+-- Table structure for m_visi_misi
+-- ----------------------------
+DROP TABLE IF EXISTS `m_visi_misi`;
+CREATE TABLE `m_visi_misi`  (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `listing` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL,
+  `user_insert` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `date_insert` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `user_update` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `date_update` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of m_visi_misi
+-- ----------------------------
+INSERT INTO `m_visi_misi` VALUES (1, 'Menjadi Perusahaan Penyedia Jasa Yang Mampu bersaing di Pasaran ', NULL, NULL, NULL, NULL);
+INSERT INTO `m_visi_misi` VALUES (2, 'Meningkatkan Layanan Terhadap Konsumen', NULL, NULL, NULL, NULL);
+INSERT INTO `m_visi_misi` VALUES (3, 'Mempertahankan Kualitas Menjadi Pokok Perhatian Pertama', NULL, NULL, NULL, NULL);
+INSERT INTO `m_visi_misi` VALUES (4, 'Mengejar Target Produksi Agar Konsumen Puas dan Percaya ', NULL, NULL, NULL, NULL);
+INSERT INTO `m_visi_misi` VALUES (5, 'Tetap Eksis di Dunia Pengolahan Plat Besi', NULL, NULL, NULL, NULL);
+INSERT INTO `m_visi_misi` VALUES (6, '\r\nFokus dan Tetap Mengikuti Perkembangan Teknologi\r\n', NULL, NULL, NULL, NULL);
 
 SET FOREIGN_KEY_CHECKS = 1;

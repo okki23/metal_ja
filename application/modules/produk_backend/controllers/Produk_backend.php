@@ -43,7 +43,7 @@ class Produk_backend extends Parent_Controller {
    
 	public function get_data_edit(){
 		$id = $this->uri->segment(3); 
-		$sql = "select a.*,b.deskripsi as kategori from m_produk_backend a left join m_cat_produk b on b.id = a.id_kategori where a.id = '".$id."' "; 
+		$sql = "select a.*,b.deskripsi as kategori from m_produk a left join m_cat_produk b on b.id = a.id_kategori where a.id = '".$id."' "; 
 		$get = $this->db->query($sql)->row();
 		echo json_encode($get,TRUE);
 	}
@@ -95,7 +95,7 @@ class Produk_backend extends Parent_Controller {
   function upload_produk_backend(){  
     if(isset($_FILES["user_image"])){  
         $extension = explode('.', $_FILES['user_image']['name']);   
-        $destination = './upload/' . $_FILES['user_image']['name'];  
+        $destination = './file_manager_dir/' . $_FILES['user_image']['name'];  
         return move_uploaded_file($_FILES['user_image']['tmp_name'], $destination);  
          
     }  
